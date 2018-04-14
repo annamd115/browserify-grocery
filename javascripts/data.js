@@ -1,10 +1,11 @@
 const loadDepartments = require('./departments');
+const printToDom = require('./dom');
 
 let departmentsArray = [];
 
 const whenDepartmentsLoad = function () {
   departmentsArray = JSON.parse(this.responseText).departments;
-  console.log(departmentsArray);
+  printToDom(departmentsArray);
 };
 
 const badDepartments = function () {
