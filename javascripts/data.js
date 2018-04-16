@@ -1,5 +1,5 @@
-// the place where we hold the arrays
 let departments = [];
+// let items = [];
 
 const getDepartments = () => {
   return departments;
