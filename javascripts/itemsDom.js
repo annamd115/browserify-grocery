@@ -10,7 +10,9 @@ const itemsDomString = (items) => {
     domString +=       `<h3 class="panel-title">${item.name}</h3>`;
     domString +=     `</div>`;
     domString +=     `<div class="panel-body">`;
-    domString +=       ``;
+    domString +=       `<div class="row">`;
+    domString +=       `<img class="item-image" src="${item.img}">`;
+    domString +=       `</div>`;
     domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
