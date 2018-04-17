@@ -22,3 +22,12 @@ body{
     top: 150px;
     font-size: 60px;
 }
+
+/* ITEMS */
+.item .panel{
+    height: 200px;
+}
+.item-image{
+    height: 100px;
+    width: 100px;
+}
