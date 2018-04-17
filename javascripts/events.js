@@ -1,31 +1,37 @@
-const departmentCard = document.getElementsByClassName('department');
+const data = require('./data');
+const itemsDom = require('./itemsDom');
+
+const departmentContainerDiv = document.getElementById('departments');
+const departmentCards = document.getElementsByClassName('department');
 
 const showDepartmentName = (e) => {
   const departmentImg = e.target.children[1];
   const departmentName = e.target.children[0];
 
-  departmentImg.classList.add('grey-out');
   departmentName.classList.remove('hide');
+  departmentImg.classList.add('grey-out');
 };
 
 const hideDepartmentName = (e) => {
   const departmentImg = e.target.children[1];
   const departmentName = e.target.children[0];
 
-  departmentImg.classList.remove('grey-out');
   departmentName.classList.add('hide');
+  departmentImg.classList.remove('grey-out');
 };
 
 const showItems = (e) => {
   const departmentId = e.target.parentNode.children[0].dataset.departmentId;
-  console.log(departmentId);
+  const selectedItems = data.getitemsByDepartment(departmentId);
+  departmentContainerDiv.innerHTML = '';
+  itemsDom(selectedItems);
 };
 
 const addDepartmentEvents = () => {
-  for (let i = 0; i < departmentCard.length; i++) {
-    departmentCard[i].addEventListener('mouseenter', showDepartmentName);
-    departmentCard[i].addEventListener('mouseleave', hideDepartmentName);
-    departmentCard[i].addEventListener('click', showItems);
+  for (let i = 0; i < departmentCards.length; i++) {
+    departmentCards[i].addEventListener('mouseenter', showDepartmentName);
+    departmentCards[i].addEventListener('mouseleave', hideDepartmentName);
+    departmentCards[i].addEventListener('click', showItems);
   }
 };
 
