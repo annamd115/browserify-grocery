@@ -38,7 +38,6 @@ const setCart = (itemId, numberToAdd) => {
   // Adding a new key value pair to that object
   newItem.purchaseNum = numberToAdd;
   cart.push(newItem);
-  console.log('cart', cart);
 };
 
 module.exports = {
